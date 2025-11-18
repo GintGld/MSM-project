@@ -9,7 +9,7 @@ function M = build_markov_explicit(W)
     A = min(1, R);             % elementwise acceptance
     A(1:N+1:end) = 0;          % zero out diagonal (no self-proposal)
 
-    q = 1;                     % set to whatever
+    q = 1 / N;                 % set to whatever
     M = q * A;                 % off-diagonals
 
     % Fill diagonal so each row sums to 1
